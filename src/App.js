@@ -1,23 +1,31 @@
-import logo from './logo.svg';
 import './App.css';
+import RandomMeal from './components/RandomMeal'
+import ReplayIcon from '@material-ui/icons/Replay';
+
+// TODO
+// 1. Search for meal 
+// 2. Display Results
+// 3. Random / Featured meals
+// 4. BookMark favorite recipe
+function refreshPage() {
+  window.location.reload(false);
+}
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="wrapper">
+
+        <div className="header">
+          <h1>Stay Healthy</h1>
+          <input type="button" value="Get Meal" onClick={refreshPage}/>
+        </div>
+
+        <div className="container">
+          <RandomMeal />
+        </div>
+        
+      </div>
     </div>
   );
 }
